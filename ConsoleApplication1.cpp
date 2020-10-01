@@ -1,18 +1,10 @@
 #include <iostream>
 #include <ctype.h>
+
 #ifdef _WIN32
 #include <conio.h>
-
-//BEGIN CODE REQUIRED FOR GRAPHICS
-//#include "stdafx.h"
-//#include <gdiplus.h>
 #include <windows.h>
-//#include <objidl.h>
-//using namespace Gdiplus;
-//#pragma comment (lib,"Gdiplus.lib")
-//END CODE REQUIRED FOR GRAPHICS
 #elif defined(__unix__)
-#include <iostream>
 #include <stdio.h>
 #define SetConsoleTextAttribute(X,ATTR)
 #define GetStdHandle(x)
@@ -22,14 +14,11 @@
 #error "Unknown build target!"
 #endif
 
-
 #include "MasterBoard.hpp"
 #include "Tile.hpp"
 #include "Minion.hpp"
 
 using namespace std;
-
-//This is an edit.
 
 char Input					= ' ';	
 class Minion;
