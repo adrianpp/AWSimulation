@@ -1,9 +1,6 @@
 #include "Minion.hpp"
 #include "MasterBoard.hpp"
 
-extern MasterBoard GameBoard;
-extern Minion minionRoster[GLOBALSUPPLYCAP];
-
 Minion::Minion()
 {
 	Location = -1;
@@ -17,7 +14,7 @@ Minion::Minion()
 	
 }
 
-int Minion::addMinion(int inputSeniority, int inputLocation, char inputType, int inputTeam)
+Minion::Minion(int inputLocation, char inputType, int inputTeam)
 {
 	Location = inputLocation;
 	type = inputType;
@@ -61,10 +58,7 @@ int Minion::addMinion(int inputSeniority, int inputLocation, char inputType, int
 	}
 
 	team = inputTeam;
-	GameBoard.Board[inputLocation].minionOnTop = &minionRoster[inputSeniority];
-	GameBoard.Board[inputLocation].hasMinionOnTop = true;
 	health = 100;
 	isAlive = true;
-	return 0;
 }
 

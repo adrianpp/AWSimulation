@@ -159,8 +159,10 @@ int MasterBoard::createMinion(char inputType, int inputLocation, int inputTeam)
 	for (int i = 0; i < GLOBALSUPPLYCAP; i++)
 		if (minionRoster[i].isAlive == false)
 		{
-			minionRoster[i].addMinion(i, inputLocation, inputType, inputTeam);
-			i = GLOBALSUPPLYCAP;
+			minionRoster[i] = Minion(inputLocation, inputType, inputTeam);
+			Board[inputLocation].minionOnTop = &minionRoster[i];
+			Board[inputLocation].hasMinionOnTop = true;
+			break;
 		}
 
 	return 0;

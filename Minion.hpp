@@ -5,7 +5,7 @@
 
 class Minion
 {	public:
-	int addMinion(int inputSeniority, int inputLocation, char inputType, int inputTeam);
+	Minion(int inputLocation, char inputType, int inputTeam);
 	Minion();
 	bool isAlive;
 	int Location;
